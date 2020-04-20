@@ -67,6 +67,7 @@ double Wektor::operator * (const Wektor Skl)
 Wektor Wektor::operator / (double Skl)
 {
       Wektor wyn;
+      assert(Skl!=0);
       for(int i=0; i<ROZMIAR; i++)
       {
         wyn[i]=Wek[i]/Skl;
@@ -85,15 +86,7 @@ Wektor Wektor::operator * (double Skl)
       return wyn;
 }
 
-double Wektor::get_Wek(int i) const
-{
-      return Wek[i];
-}
 
-double & Wektor::set_Wek(int i) 
-{
-      return Wek[i];
-}
 
 
 double Wektor::operator[](int i) const
@@ -123,17 +116,17 @@ std::ostream& operator << (std::ostream &Strm, const Wektor &Wek)
 }
 
  
-bool operator == (const Wektor & W2) const
+bool Wektor::operator == (const Wektor & W2) const
 {
    for(int i=0; i<ROZMIAR; i++)
-   if(Wek[i]!=W2[i]) return false;
+   if(abs(Wek[i]-W2[i])<=0.001) return false;
    return true;
 }
 
-bool operator != (const Wektor & W2) const
+bool Wektor::operator != (const Wektor & W2) const
 {
    for(int i=0; i<ROZMIAR; i++)
-   if(Wek[i]!=W2[i]) return true;
+   if(abs(Wek[i]-W2[i])>0.001) return true;
    return false;
 }
 

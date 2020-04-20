@@ -15,8 +15,7 @@ class Macierz {
   Wektor Mac[ROZMIAR];
   public:
   double wyznacznik();
-  Wektor get_Mac(int i) const;
-  Wektor & set_Mac(int i) ;
+  Macierz operator&();  /*Transpozycja*/
   Wektor operator[](int i) const;
   Wektor &operator[](int i);  
   Wektor operator*(const Wektor  W2);

@@ -21,8 +21,8 @@
        Macierz Kop;
        double Wyz;
       Wyz= Mac.wyznacznik();
-        std::cout<<"////////////////////"<<std::endl;
-     std::cout<<Wyz<<std::endl;
+      std::cout<<"////Wyznacznik/////"<<std::endl;
+      std::cout<<Wyz<<std::endl;
       std::cout<<"////////////////////"<<std::endl;
       if(Wyz==0)
       {
@@ -43,7 +43,7 @@
             Wynik[i]=Kop.wyznacznik()/Wyz;
 
           }
-          return 0;
+          return 2;
 
 
    }
@@ -54,22 +54,25 @@
        std::cout<<"Dlugosc Wektora bledu :"<<Bledu.dlugosc()<<std::endl;
 
    }
+
  Wektor UkladRownanLiniowych::get_Wynik()const
  {
      return Wynik;
  }
+
 std::istream& operator >> (std::istream &Strm, UkladRownanLiniowych &UklRown)
       {
             Strm>>UklRown.set_Mac()>>UklRown.set_Wek();
             return Strm;
       }
+
 std::ostream& operator << ( std::ostream                  &Strm, 
                             const UkladRownanLiniowych    &UklRown
                           )
       {
-          Strm<<"A^T:"<<std::endl;
-            Strm<<UklRown.get_Mac();
- Strm<<"Wektro wyrazow wolnych:"<<std::endl;
-            Strm<<UklRown.get_Wek()<<std::endl;
-            return Strm;
+        Strm<<"A^T:"<<std::endl;
+        Strm<<UklRown.get_Mac();
+        Strm<<"Wektor wyrazow wolnych:"<<std::endl;
+        Strm<<UklRown.get_Wek()<<std::endl;
+        return Strm;
       }

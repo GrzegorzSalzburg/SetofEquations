@@ -17,11 +17,22 @@ using namespace std;
 
 int main()
 {
-  UkladRownanLiniowych   UklRown;   // To tylko przykladowe definicje zmiennej
+UkladRownanLiniowych   UklRown;   // To tylko przykladowe definicje zmiennej
 cin>>UklRown;
 cout<<UklRown;
-UklRown.oblicz();
-cout<<UklRown.get_Wynik()<<endl;
-UklRown.Bledy();
-  cout << endl << " Start programu " << endl << endl;
+switch( UklRown.oblicz())
+{
+  case 0:
+  cout<<"brak rozwiazan"<<endl;
+  break;
+  case 1:
+  cout<<"nieskonczenie wiele rozwiazan"<<endl;
+  break;
+  case 2:
+  cout<<UklRown.get_Wynik()<<endl;
+  UklRown.Bledy();
+  break;
+}
+
+ 
 }

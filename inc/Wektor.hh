@@ -3,6 +3,7 @@
 
 #include "rozmiar.h"
 #include <iostream>
+#include <cassert>
 #include <cmath>
 
 /*
@@ -19,8 +20,6 @@ double Wek[ROZMIAR];
   double dlugosc();
   bool operator == (const Wektor & W2) const;
   bool operator != (const Wektor & W2) const;
-  double get_Wek(int i) const;
-  double & set_Wek(int i) ;
   double operator[](int i) const;
   double &operator[](int i);
   Wektor operator + (const Wektor Skl);

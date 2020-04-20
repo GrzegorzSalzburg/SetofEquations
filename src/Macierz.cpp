@@ -8,14 +8,14 @@
  *  Mniejsze metody mozna definiwac w ciele klasy.
  */
 
-Wektor Macierz::get_Mac(int i) const
+Macierz Macierz::operator&()
 {
-     return Mac[i];
-}
+    Macierz Wynik;
+    for(int i=0; i<ROZMIAR; i++)
+     for(int j=0; j<ROZMIAR; j++)
+        Wynik[i][j]=Mac[j][i];
 
-Wektor & Macierz::set_Mac(int i) 
-{
-     return Mac[i];
+return Wynik;
 }
 
 
